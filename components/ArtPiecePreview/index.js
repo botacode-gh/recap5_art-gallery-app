@@ -1,13 +1,18 @@
 import Image from "next/image";
 
-export default function ArtPiecePreview({ image, title, artist }) {
+export default function ArtPiecePreview({ imageUrl, title, artist }) {
   return (
     <figure>
-      <Image src={image} alt={`art piece: ${title}`} width={300} height={300} />
+      <Image
+        src={imageUrl}
+        alt={`art piece: ${title}`}
+        width={300}
+        height={300}
+      />
       <figcaption>{title}</figcaption>
-      <p>
+      <span>
         by <cite>{artist}</cite>
-      </p>
+      </span>
     </figure>
   );
 }
