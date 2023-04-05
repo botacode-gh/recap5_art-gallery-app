@@ -6,12 +6,8 @@ export default function Spotlight({ pieces }) {
 
   return (
     <div>
-      <h2>Spotlight Piece</h2>
-      <ArtPiecePreview
-        imageUrl={randomPiece.imageSource}
-        title={randomPiece.name}
-        artist={randomPiece.artist}
-      />
+      <h1>Spotlight Piece</h1>
+      <ArtPiecePreview piece={randomPiece} />
     </div>
   );
 }

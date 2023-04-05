@@ -1,15 +1,13 @@
-import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces";
+import Spotlight from "../components/Spotlight";
 
-export default function HomePage() {
-  const url = "https://example-apis.vercel.app/api/art";
-
-  const { data } = useSWR(url);
-
+export default function SpotlightPage({ pieces }) {
   return (
     <div>
-      <h1>Art</h1>
-      {data && <ArtPieces pieces={data} />}
+      {pieces && (
+        <>
+          <Spotlight pieces={pieces} />
+        </>
+      )}
     </div>
   );
 }

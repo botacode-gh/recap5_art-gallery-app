@@ -1,18 +1,29 @@
+import Link from "next/link";
 import Image from "next/image";
 
-export default function ArtPiecePreview({ imageUrl, title, artist }) {
+export default function ArtPiecePreview({ piece }) {
+  const { dimensions, imageSource, name, artist, slug } = piece;
+
   return (
     <figure>
       <Image
-        src={imageUrl}
-        alt={`art piece: ${title}`}
-        width={300}
-        height={300}
+        src={imageSource}
+        alt={`art piece: ${name}`}
+        width={dimensions.width * 0.2}
+        height={dimensions.height * 0.2}
       />
-      <figcaption>{title}</figcaption>
-      <span>
-        by <cite>{artist}</cite>
-      </span>
+      <figcaption>
+        <div>
+          <strong>{artist}</strong>
+        </div>
+        <div>
+          <cite>
+            <Link href={{ pathname: "/art-pieces/[slug]", query: { slug } }}>
+              {name}
+            </Link>
+          </cite>{" "}
+        </div>
+      </figcaption>
     </figure>
   );
 }
