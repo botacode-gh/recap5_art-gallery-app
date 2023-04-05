@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function ArtPiecePreview({ piece, type = "default" }) {
+  console.log("piece in ArtPiecePreview:", piece);
   const router = useRouter();
+
   const { dimensions, imageSource, name, artist, slug, year, genre } = piece;
 
   let imageSize;
