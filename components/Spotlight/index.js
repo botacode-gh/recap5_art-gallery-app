@@ -7,7 +7,7 @@ export default function Spotlight({ pieces }) {
   return (
     <div>
       <h1>Spotlight Piece</h1>
-      <ArtPiecePreview piece={randomPiece} />
+      <ArtPiecePreview piece={randomPiece} type="spotlight" />
     </div>
   );
 }
