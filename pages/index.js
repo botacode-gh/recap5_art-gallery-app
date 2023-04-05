@@ -1,7 +1,13 @@
-export default function HomePage() {
+import Spotlight from "../components/Spotlight";
+
+export default function SpotlightPage({ pieces }) {
   return (
     <div>
-      <h1>Hello from Next.js</h1>
+      {pieces && (
+        <>
+          <Spotlight pieces={pieces} />
+        </>
+      )}
     </div>
   );
 }
